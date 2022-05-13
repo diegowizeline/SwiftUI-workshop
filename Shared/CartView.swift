@@ -1,10 +1,11 @@
 //
 //  CartView.swift
-//  FirstUI
+//  Swift-Workshop-Diego
 //
-//  Created by Juan Enriquez on 12/05/22.
+//  Created by Diego Herrera Rivera on 13/05/22.
 //
 
+import Foundation
 import SwiftUI
 
 struct CartView: View {
@@ -12,10 +13,10 @@ struct CartView: View {
     @State var showingAlert = false
     @State var jiggling = false
     @State var jiggling_counter = 0
-    
-    var scale_effect = 1.2
-    let rotation_angle_base = 15
     @State private var rotation_angle = 0
+    
+    private var scale_effect = 1.2
+    private let rotation_angle_base = 15
     
     init(showModal: Binding<Bool>) {
         self._showModal = showModal
@@ -29,16 +30,10 @@ struct CartView: View {
                 Text("1 items")
                     .foregroundColor(.gray)
                     .opacity(0.7)
-                BookCartCellView()
-                    .frame(width: 300)
-                    .rotationEffect(.degrees(jiggling ? Double(rotation_angle) : 0))
-                    .scaleEffect(jiggling ? scale_effect : 1)
-                    .animation(.linear(duration: 0.15), value: jiggling)
-                CartTotalCellView()
-                    .frame(width: 300)
-                    .rotationEffect(.degrees(jiggling ? Double(rotation_angle) : 0))
-                    .scaleEffect(jiggling ? scale_effect : 1)
-                    .animation(.linear(duration: 0.15), value: jiggling)
+                BookCartCellView(jiggling: $jiggling, jiggling_counter: $jiggling_counter, rotation_angle: $rotation_angle, scale_effect: scale_effect, rotation_angle_base: rotation_angle)
+                    .padding([.horizontal], 50)
+                CartTotalCellView(jiggling: $jiggling, jiggling_counter: $jiggling_counter, rotation_angle: $rotation_angle, scale_effect: scale_effect, rotation_angle_base: rotation_angle)
+                    .padding([.horizontal], 50)
                 Divider()
                     .padding()
                 Button("Checkout") {
@@ -83,7 +78,6 @@ struct CartView: View {
                     if(jiggling_counter == 4){
                         jiggling_counter = 0
                         rotation_angle = -rotation_angle_base
-                        //jiggle_shipping_icon(apply_delay: true)
                     } else {
                         if(rotation_angle < 0){
                             rotation_angle = rotation_angle_base
