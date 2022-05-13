@@ -27,7 +27,6 @@
 		858A0468282C6D1E002727BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		858A046D282C6D1E002727BE /* Swift-Workshop-Diego.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift-Workshop-Diego.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		858A0473282C6D1E002727BE /* Swift-Workshop-Diego.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift-Workshop-Diego.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		858A0475282C6D1E002727BE /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		858A048A282EDB4E002727BE /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		858A048E282EDB7B002727BE /* BookCartCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCartCellView.swift; sourceTree = "<group>"; };
 		858A0491282EDB9F002727BE /* CartTotalCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTotalCellView.swift; sourceTree = "<group>"; };
@@ -55,7 +54,6 @@
 			isa = PBXGroup;
 			children = (
 				858A0465282C6D1B002727BE /* Shared */,
-				858A0474282C6D1E002727BE /* macOS */,
 				858A046E282C6D1E002727BE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -79,14 +77,6 @@
 				858A0473282C6D1E002727BE /* Swift-Workshop-Diego.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		858A0474282C6D1E002727BE /* macOS */ = {
-			isa = PBXGroup;
-			children = (
-				858A0475282C6D1E002727BE /* macOS.entitlements */,
-			);
-			path = macOS;
 			sourceTree = "<group>";
 		};
 		858A048D282EDB65002727BE /* Cells */ = {
